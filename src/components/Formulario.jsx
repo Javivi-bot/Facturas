@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export function Formulario(props) {
-    const [cliente, setCliente] = useState('');
+export function Formulario() {
+    function calcular() {
+        if (cliente === "" || isNaN(cuenta) || personas < 1 || cuenta === "") {
+            alert("Ingresa valores validos")
+            return;
+        }
+
+        const receiptNumber = Math.floor(Math.random() * 100000);
+        const hoy = new Date();
+        const fechaLocal = hoy.toLocaleDateString();
+
+
+        setReceipts(receipts.concat({ no: receiptNumber + "ABC", establecimiento: "The Velvet", cliente: cliente, propina: propina, cuenta: cuenta, personas: personas, fecha: fechaLocal }))
+
+    }
+
+    function reiniciar() {
+        setCliente('')
+        setCuenta(null)
+        setPropina(0.05)
+        setPersonas(1)
+    }
     
+    const [cliente, setCliente] = useState('');
     const [propina, setPropina] = useState(0.05);
     const [cuenta, setCuenta] = useState(null);
     const [personas, setPersonas] = useState(1);
     return (
         <div className="space-y-4">
-            
+
             <div>
                 <label htmlFor="nombre_cliente" className="block text-sm font-medium text-gray-700 mb-1">
                     Nombre del cliente:

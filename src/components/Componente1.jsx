@@ -31,14 +31,32 @@ export const Componente1 = () => {
 
   function reiniciar(){
     setCliente('')
-    setCuenta('')
+    setCuenta(null)
     setPropina(0.05)
+    setPersonas(1)
   }
 
   function volver(){
     if(receipt){
       setReceipt(null)
     }
+  }
+
+  function editar(){
+    const [cambiar, setCambiar] = useState(receipt || {});
+    const [editando, setEditando] = useState(false);
+
+    {
+      return editando ? (
+        <div>
+          <label>Cliente: </label>
+          <input type="text" />
+        </div>
+      ) :  <></>
+    }
+
+
+
   }
 
   return receipt ? (
@@ -56,6 +74,11 @@ export const Componente1 = () => {
       <button type="button" onClick={volver} className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium transition-colors">
         Volver
       </button>
+
+      <button type="button" onClick={editar} className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium transition-colors">
+        Editar
+      </button>
+
     </div>
     
   ) : (

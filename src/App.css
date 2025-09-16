@@ -1,7 +1,6 @@
 
 .receiptsList{
   display: flex;
-  background-color: blue;
   flex-direction: column-reverse;
 }
 
