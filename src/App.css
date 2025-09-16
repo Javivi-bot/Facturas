@@ -19,3 +19,10 @@
 .factura:hover{
   background-color: rgb(203, 225, 255);
 }
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+

@@ -29,7 +29,10 @@ export const Componente1 = (props) => {
   }
   return receipt ? (
     <div>
-      <InovoiceForm key={"edit-"+receipt.no} addReceipt={receipt => setReceipts(receipts.concat(receipt))} mode={"edit"} valuesToEdit={{
+      <InovoiceForm key={"edit-"+receipt.no} addReceipt={receipt => {
+        console.log(receipt);
+        setReceipts(receipts.concat(receipt))
+      }} mode={"edit"} valuesToEdit={{
                 client: receipt.client,
                 total : receipt.total,
                 tip: receipt.tip,
@@ -48,13 +51,13 @@ volver={volver}
           {receipts.map(receipt => (
               <div className="factura" 
                 key={receipt.no} onClick={() => setReceipt(receipt)}>
-                <p className="fecha"><strong>Fecha:</strong> {receipt.fecha}</p>
-                <p><strong>Cliente: </strong> {receipt.cliente}</p>
+                <p className="fecha"><strong>Fecha:</strong> {receipt.date}</p>
+                <p><strong>Cliente: </strong> {receipt.client}</p>
                 <p><strong>No. Factura:</strong> {receipt.no}</p>
-                <p><strong>Total de cuenta: </strong> {Number(receipt.cuenta)}</p>
-                <p><strong>Establecimiento:</strong> {receipt.establecimiento}</p>
-                <p><strong>Propina:</strong> {Number(receipt.propina) * 100}%</p>
-                <p><strong>Personas:</strong> {receipt.personas}</p>
+                <p><strong>Total de cuenta: </strong> {Number(receipt.total)}</p>
+                <p><strong>Establecimiento:</strong> {receipt.establishment}</p>
+                <p><strong>Propina:</strong> {Number(receipt.tip) * 100}%</p>
+                <p><strong>Personas:</strong> {Number(receipt.people)}</p>
               </div>
           ))}
       </div>
