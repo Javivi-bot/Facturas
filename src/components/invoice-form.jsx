@@ -46,7 +46,7 @@ export const InovoiceForm = (props) => {
 
 
   function onCalculateClick() {
-    if (client === "" || isNaN(total) || people < 1 || total === "" || +total === 0) {
+    if (client === "" || isNaN(total) || people < 1 || total === "" || +total < 0) {
       alert("Ingresa valores validos")
     } else {
 
