@@ -24,10 +24,10 @@ export const InovoiceForm = (props) => {
   const [establishment, setEstablishment] = useState(props.valuesToEdit?.establishment ?? '');
   const [no, setNo] = useState(props.valuesToEdit?.no ?? '');
 
-  const comprobar = client === "" || isNaN(total) || people < 1 || total === "" || +total === 0 || total < 1;
+  const comprobar = client === "" || isNaN(total) || people < 1 || total === "" || +total < 1;
 
   function verificarGuardado() {
-    props.editReceipt?.({ people, tip, total, client, establishment, no })
+    
     if (comprobar) {
       document.getElementById("volver").style.display = "none";
       alert("Ningun campo puede quedar vacio");
@@ -35,6 +35,8 @@ export const InovoiceForm = (props) => {
       document.getElementById("volver").style.display = "inline-block";
     }
   }
+
+  props.editReceipt?.({ people, tip, total, client, establishment, no });
 
 
   const propinaTotal = +total * +tip;
@@ -60,7 +62,7 @@ export const InovoiceForm = (props) => {
 
   function onResetClick() {
     setClient('')
-    setTotal(null)
+    setTotal('')
     setTip(0.05)
     setPeople(1)
   }
