@@ -2,22 +2,6 @@ import React, { useState } from "react";
 import "../App.css";
 import { InovoiceForm } from "./invoice-form";
 
-
-
-  function Editar(){
-    const [cambiar, setCambiar] = useState({});
-    const [editando, setEditando] = useState(false);
-
-    {
-      return editando ? (
-        <div>
-          <label>Cliente: </label>
-          <input type="text" />
-        </div>
-      ) :  <></>
-    }
-  }
-
 export const Componente1 = (props) => {
   const [receipt, setReceipt] = useState(null);
   const [receipts, setReceipts] = useState([]);
@@ -36,10 +20,12 @@ export const Componente1 = (props) => {
                 client: receipt.client,
                 total : receipt.total,
                 tip: receipt.tip,
-                people: receipt.people
+                people: receipt.people,
+                establishment: receipt.establishment,
+                no: receipt.no
             }} editReceipt={newValues => setReceipts([...receipts.filter(currentRecdipt => currentRecdipt.no !== receipt.no), {...receipt, ...newValues}])}
 volver={volver}
-
+            
             />
 
     </div>

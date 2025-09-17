@@ -1,4 +1,3 @@
-
 .receiptsList{
   display: flex;
   flex-direction: column-reverse;
@@ -9,20 +8,157 @@
 }
 
 .factura{
-  background-color: rgb(216, 216, 216);
+  
   cursor: pointer;
-  width: 300px;
-  padding: 10px;
-  margin: 10px;
+  
+  
+  
+  height: 300px;
+
+  background-color: #f5f5f5; /* gris claro y suave */
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 350px; /* ajusta según necesites */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra suave */
+  font-family: 'Roboto', sans-serif;
+  color: #222; /* texto oscuro pero no negro puro */
+  line-height: 1.6;
+  margin: 20px auto;
 }
 
 .factura:hover{
-  background-color: rgb(203, 225, 255);
+  background-color: rgb(255, 231, 202);
 }
 
 @media print {
   .no-print {
     display: none !important;
   }
+
 }
+
+.no-print{
+  float: left;
+  margin-left: 15px;
+  margin-right: 500px;
+}
+
+
+.boton{
+  background-color: #ff7f50; 
+  color: white;
+  padding: 12px 24px;
+  margin: 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.boton:hover{
+    background-color: #fbbda7;
+    color: #000;
+}
+
+label{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"], input[type="text"]{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    padding: 4px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ffd797;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="number"], input[type="text"]:hover{
+    background-color: #ffece5;
+}
+
+input[type="number"], input[type="text"]:focus{
+    background-color: #ffece5;
+}
+
+select{
+    appearance: none;          
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    border: 1px solid #ffd797; 
+    border-radius: 5px;       
+    padding: 6px 12px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+    width: 220px;
+}
+
+select:hover{
+    background-color: #ffece5;
+}
+
+select:focus{
+    background-color: #ffece5;
+}
+
+h1 {
+  font-family: 'Roboto', 'Arial', sans-serif; 
+  font-weight: 500;                          
+  font-size: 28px;                     
+  color: #333333;                            
+  margin-bottom: 16px;                      
+  line-height: 1.3;                          
+  text-align: left;
+  border-bottom: 2px solid #ffd797;
+  padding-bottom: 6px;                        
+}
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    thead {
+      background-color: #e4b480;
+      color: white;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tfoot {
+      background-color: #ecf0f1;
+      font-weight: bold;
+    }
 
