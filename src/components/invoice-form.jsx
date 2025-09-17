@@ -31,12 +31,13 @@ export const InovoiceForm = (props) => {
     if (comprobar) {
       document.getElementById("volver").style.display = "none";
       alert("Ningun campo puede quedar vacio");
-    } else if (!comprobar) {
+    } else{
       document.getElementById("volver").style.display = "inline-block";
+      props.editReceipt?.({ people, tip, total, client, establishment, no });
     }
   }
 
-  props.editReceipt?.({ people, tip, total, client, establishment, no });
+  
 
 
   const propinaTotal = +total * +tip;
@@ -55,7 +56,7 @@ export const InovoiceForm = (props) => {
       const localizedDate = today.toLocaleDateString();
 
 
-      props.addReceipt({ no: receiptNumber + "ABC", establishment: "The Velvet", client: client, tip: tip, total: total, people: people, date: localizedDate })
+      props.addReceipt({ no: receiptNumber + "ABC", establishment: establishment, client: client, tip: tip, total: total, people: people, date: localizedDate })
     }
 
   }
@@ -99,7 +100,7 @@ export const InovoiceForm = (props) => {
             </tr>
           </tbody>
         </table>
-        <h1>Seccion Editar</h1>
+        <h1>Sección Editar</h1>
 
       </>)
       }
@@ -161,6 +162,21 @@ export const InovoiceForm = (props) => {
             id="personas"
             value={people}
             onChange={(e) => setPeople(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            step="0.01"
+            min="0"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="personas" className="block text-sm font-medium text-gray-700 mb-1">
+            Establecimiento:
+          </label>
+          <input
+            type="text"
+            id="personas"
+            value={establishment}
+            onChange={(e) => setEstablishment(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             step="0.01"
             min="0"
