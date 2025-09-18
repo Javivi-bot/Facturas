@@ -1,6 +1,7 @@
 .receiptsList{
   display: flex;
   flex-direction: column-reverse;
+  margin-left: 75%;
 }
 
 .fecha{
@@ -8,17 +9,11 @@
 }
 
 .factura{
-  
   cursor: pointer;
-  
-  
-  
-  height: 300px;
-
-  background-color: #f5f5f5;
+  height: 350px;
+  background-color: #e2e2e2;
   padding: 25px 30px;
-  border-radius: 12px;
-  width: 350px; 
+  width: 240px; 
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
   font-family: 'Roboto', sans-serif;
   color: #222; 
@@ -41,6 +36,12 @@
   float: left;
   margin-left: 15px;
   margin-right: 500px;
+  margin: 10px;
+  background-color: #d0d0d0;
+  height: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  position: fixed;
 }
 
 
@@ -48,7 +49,7 @@
   background-color: #ff7f50; 
   color: white;
   padding: 12px 24px;
-  margin: 30px;
+  margin-left: 80px;
   border: none;
   border-radius: 8px;
   font-size: 16px;

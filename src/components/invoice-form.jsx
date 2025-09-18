@@ -24,7 +24,7 @@ export const InovoiceForm = (props) => {
   const [establishment, setEstablishment] = useState(props.valuesToEdit?.establishment ?? '');
   const [no, setNo] = useState(props.valuesToEdit?.no ?? '');
 
-  const comprobar = client === "" || isNaN(total) || people < 1 || total === "" || +total < 1;
+  const comprobar = client === "" || isNaN(total) || people < 1 || total === "" || +total < 1 || establishment === "";
 
   function verificarGuardado() {
     
@@ -47,7 +47,7 @@ export const InovoiceForm = (props) => {
 
 
   function onCalculateClick() {
-    if (client === "" || isNaN(total) || people < 1 || total === "" || +total < 0) {
+    if (comprobar) {
       alert("Ingresa valores validos")
     } else {
 
@@ -66,6 +66,7 @@ export const InovoiceForm = (props) => {
     setTotal('')
     setTip(0.05)
     setPeople(1)
+    setEstablishment('')
   }
 
   return (
